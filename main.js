@@ -14,10 +14,21 @@ class Vingador extends Pessoa {
     this.isMembroFundador = isMembroFundador;
   }
   lutar() {
-    alert(`${this.nome} está lutando usando ${this.poderes[0]}`);
+    alert(`${this.nome} está lutando usando ${this.poderes[1]}`);
   }
 }
 
+class novoVingador extends Pessoa {
+  constructor(nome, altura, peso, poderes, temArmadura, isMembroFundador) {
+    super(nome, altura, peso);
+    this.poderes = poderes;
+    this.temArmadura = temArmadura;
+    this.isMembroFundador = isMembroFundador;
+  }
+  lutar() {
+    alert(`${this.nome} está lutando usando ${this.poderes[1]}`);
+  }
+}
 const thor = new Vingador(
   "Thor",
   "1.85",
@@ -27,15 +38,16 @@ const thor = new Vingador(
   true
 );
 
+const hulk = new novoVingador(
+  "Hulk",
+  "2.30",
+  "180kg",
+  ["Hiper Força", "Regeneração"],
+  false,
+  false
+);
+
 document.getElementById("lutar").onclick = function () {
   thor.lutar();
+  hulk.lutar();
 };
-
-class OperacoesMatematicas {
-  static soma(a, b) {
-    return a + b;
-  }
-}
-
-const sum = OperacoesMatematicas.soma(1, 3);
-alert(sum);

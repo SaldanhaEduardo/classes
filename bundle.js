@@ -50,33 +50,44 @@ var Vingador = /*#__PURE__*/function (_Pessoa) {
   _createClass(Vingador, [{
     key: "lutar",
     value: function lutar() {
-      alert("".concat(this.nome, " est\xE1 lutando usando ").concat(this.poderes[0]));
+      alert("".concat(this.nome, " est\xE1 lutando usando ").concat(this.poderes[1]));
     }
   }]);
 
   return Vingador;
 }(Pessoa);
 
-var thor = new Vingador("Thor", "1.85", "100kg", ["Super Força", "Raio"], true, true);
+var novoVingador = /*#__PURE__*/function (_Pessoa2) {
+  _inherits(novoVingador, _Pessoa2);
 
-document.getElementById("lutar").onclick = function () {
-  thor.lutar();
-};
+  var _super2 = _createSuper(novoVingador);
 
-var OperacoesMatematicas = /*#__PURE__*/function () {
-  function OperacoesMatematicas() {
-    _classCallCheck(this, OperacoesMatematicas);
+  function novoVingador(nome, altura, peso, poderes, temArmadura, isMembroFundador) {
+    var _this2;
+
+    _classCallCheck(this, novoVingador);
+
+    _this2 = _super2.call(this, nome, altura, peso);
+    _this2.poderes = poderes;
+    _this2.temArmadura = temArmadura;
+    _this2.isMembroFundador = isMembroFundador;
+    return _this2;
   }
 
-  _createClass(OperacoesMatematicas, null, [{
-    key: "soma",
-    value: function soma(a, b) {
-      return a + b;
+  _createClass(novoVingador, [{
+    key: "lutar",
+    value: function lutar() {
+      alert("".concat(this.nome, " est\xE1 lutando usando ").concat(this.poderes[1]));
     }
   }]);
 
-  return OperacoesMatematicas;
-}();
+  return novoVingador;
+}(Pessoa);
 
-var sum = OperacoesMatematicas.soma(1, 3);
-alert(sum);
+var thor = new Vingador("Thor", "1.85", "100kg", ["Super Força", "Raio"], true, true);
+var hulk = new novoVingador("Hulk", "2.30", "180kg", ["Hiper Força", "Regeneração"], false, false);
+
+document.getElementById("lutar").onclick = function () {
+  thor.lutar();
+  hulk.lutar();
+};
