@@ -31,11 +31,11 @@ document.getElementById("lutar").onclick = function () {
   thor.lutar();
 };
 
-class OperacoesMatematicas {
-  static soma(a, b) {
-    return a + b;
-  }
-}
+// class OperacoesMatematicas {
+//   static soma(a, b) {
+//     return a + b;
+//   }
+// }
 
-const sum = OperacoesMatematicas.soma(1, 3);
-alert(sum);
+// const sum = OperacoesMatematicas.soma(1, 3);
+// alert(sum);
